@@ -16,13 +16,31 @@ If you don't like the default scaffold of create react app it really easy to adj
 {
   "package": {
     "dependencies": {
-      "@testing-library/jest-dom": "^5.11.4",
-      "@testing-library/react": "^11.1.0",
-      "@testing-library/user-event": "^12.1.10",
-      "web-vitals": "^1.0.1"
+      "@emotion/react": "^11.11.1",
+      "@emotion/styled": "^11.11.0",
+      "@mui/material": "^5.14.7",
+      "@reduxjs/toolkit": "^1.9.5",
+      "@testing-library/jest-dom": "^5.17.0",
+      "@testing-library/react": "^11.2.7",
+      "@testing-library/user-event": "^12.8.3",
+      "@types/jest": "^26.0.24",
+      "@types/node": "^12.20.55",
+      "@types/react": "^17.0.65",
+      "axios": "^1.5.0",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-redux": "^8.1.2",
+      "react-router-dom": "^6.15.0",
+      "react-scripts": "5.0.1",
+      "tss-react": "^4.9.0",
+      "typescript": "^4.9.5",
+      "web-vitals": "^1.1.2"
     },
     "eslintConfig": {
       "extends": ["react-app", "react-app/jest"]
+    },
+    "devDependencies": {
+      "@types/react-dom": "^18.2.7"
     }
   }
 }
@@ -73,13 +91,35 @@ yarn-error.log*
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <title>CRA template</title>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
 ```
@@ -88,15 +128,19 @@ yarn-error.log*
 
 ```ts
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
+
+reportWebVitals();
 ```
 
 - Inside the `template/src` folder create a `App.tsx` file.
