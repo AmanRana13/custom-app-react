@@ -1,0 +1,7 @@
+{
+  "name": "cra-template-custom-app",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/AmanRana13/custom-app-react.git",
+  "license": "MIT"
+}
